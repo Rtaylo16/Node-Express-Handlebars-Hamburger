@@ -31,9 +31,9 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/burgers/:id", function (req, res) {
 
     var burgernmn = req.params.id;
-    // var burgereat = 1;
+    var burgereat = 1;
 
-    burger.update( burgernmn, function (result) {
+    burger.updateOne( burgernmn, burgereat, function (result) {
         if (result.changedRows === 0) {
             return res.status(404).end();
         } else {
